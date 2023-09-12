@@ -4,50 +4,17 @@ template_name: idiom
 template_label: Idiom
 template_description: Chinese idiom translation quality inspection
 
+instructions: 
+  ## Chinese idiom translation evaluation
+  Please make sure you select the category that best describes the translation
+  
+
 interface_text:
-  landing_page:
-    header_text: Annotating with Thres
-    drag_drop_begin: 'Drag &amp; drop, or '
-    drag_drop_underline: click here
-    drag_drop_after: ' to add an annotation file'
-    options_header: or
-    tutorial_link: See Tutorial
-    builder_link: Customize this Template
-  comment_box:
-    label: Comment
-    placeholder: Comment on this HIT ...
   typology:
     context_label: Context
     source_label: Chinese Input
     target_label: English Translation
-  buttons:
-    save_label: Save
-    cancel_label: Cancel
-    add_edit_label: Add Edit
-    instructions_label: Instructions
-  hit_box:
-    hit_label: Hit
-  annotation_editor:
-    add_edit_header: Adding an Edit
-    select_edit_header: Select the Edit Category.
-    select_instructions: Select the text span from the
-    selected_label: Selected
-    annotating_edit_header: Annotating an Edit
-    composite_seletion_instructions: 'Click the edits that associated with '
-    composite_span_unification: with
-  adjudication:
-    highlight_label: Your Annotations
-  annotation_viewer:
-    header: Edit Annotations
-    not_annotated_text_1: this edit is not annotated yet, click
-    not_annotated_text_2: to start!
-  questions:
-    binary_yes: 'Yes'
-    binary_no: 'No'
-    likert_1: 1 - minor
-    likert_2: 2 - somewhat
-    likert_3: 3 - a lot
-    textbox_placeholder: Write your answer...
+
 
 edits:
   - name: good

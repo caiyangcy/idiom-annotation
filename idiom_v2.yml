@@ -7,7 +7,7 @@ template_description: Idiom translation quality inspection
 
 interface_text:
   landing_page:
-    header_text: Annotating with
+    header_text: Annotating with Thres
     drag_drop_begin: 'Drag &amp; drop, or '
     drag_drop_underline: click here
     drag_drop_after: ' to add an annotation file'

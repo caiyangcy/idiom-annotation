@@ -1,0 +1,134 @@
+tokenization: char
+
+template_name: idiom
+template_label: Idiom
+template_description: Idiom translation quality inspection
+
+
+interface_text:
+  landing_page:
+    header_text: Annotating with
+    drag_drop_begin: 'Drag &amp; drop, or '
+    drag_drop_underline: click here
+    drag_drop_after: ' to add an annotation file'
+    options_header: or
+    tutorial_link: See Tutorial
+    examples_link: View Example Data
+    builder_link: Customize this Template
+    paper_link: View Paper
+  comment_box:
+    label: Comment
+    placeholder: Comment on this HIT ...
+  typology:
+    context_label: Context
+    source_label: Chinese Input
+    target_label: English Translation
+  buttons:
+    save_label: Save
+    cancel_label: Cancel
+    add_edit_label: Add Edit
+    instructions_label: Instructions
+  hit_box:
+    hit_label: Hit
+  annotation_editor:
+    add_edit_header: Adding an Edit
+    select_edit_header: Select the Edit Category.
+    select_instructions: Select the text span from the
+    selected_label: Selected
+    annotating_edit_header: Annotating an Edit
+    composite_seletion_instructions: 'Click the edits that associated with '
+    composite_span_unification: with
+  adjudication:
+    highlight_label: Your Annotations
+  annotation_viewer:
+    header: Edit Annotations
+    not_annotated_text_1: this edit is not annotated yet, click
+    not_annotated_text_2: to start!
+  questions:
+    binary_yes: 'Yes'
+    binary_no: 'No'
+    likert_1: 1 - minor
+    likert_2: 2 - somewhat
+    likert_3: 3 - a lot
+    textbox_placeholder: Write your answer...
+
+edits:
+  - name: good
+    label: "Good"
+    color: green
+    icon: fa-check
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: good_type
+        question: "Select the sub-category for good translation."
+        options:
+          - name: correct_underlying
+            label: "Correct translation of underlying meaning"
+          - name: literal_coherent
+            label: "Literal translation and coherent with context"
+  - name: mistranslation
+    label: "Mistranslation"
+    color: red
+    icon: fa-xmark
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: mis_type
+        question: "Select the sub-category for mistranslation."
+        options:
+          - name: correct_underlying
+            label: "Incorrect choices of words, meaning interrupted"
+          - name: literal_coherent
+            label: "Improper choices of words, meaning preserved but not completely correct"
+  - name: literal_translation
+    label: "Literal Translation"
+    color: teal
+    icon: fa-clone
+    enable_input: true   
+    enable_output: true    
+  - name: partial_translation
+    label: "Partial Translation"
+    color: orange
+    icon: fa-star-half
+    enable_input: true 
+    enable_output: true   
+    annotation:
+      - name: partial_type
+        question: "Select the sub-category for partial translation."
+        options:
+          - name: subphrase_not_translated
+            label: "Sub-phrase not translated"
+          - name: inaccurate_modifier
+            label: "Inaccurate/Missing Modifier"
+  - name: repetition
+    label: "Repetition"
+    color: purple
+    icon: fa-repeat
+    enable_input: true   
+    enable_output: true  
+  - name: no_translation
+    label: "No Translation"
+    icon: fa-eye-slash
+    color: blue
+    enable_input: true   
+    annotation:
+      - name: notrans_type
+        question: "Select the sub-category for no translation."
+        options:
+          - name: chinese_cp_ph
+            label: "Chinese copy-pasted or paraphrased"
+          - name: missing_output
+            label: "Missing from the output"
+  - name: other
+    label: "Other"
+    color: grey
+    icon: fa-ellipsis
+    enable_input: true   
+    enable_output: true   
+    annotation:
+    - name: explanation
+      label: "Explanation"
+      question: "Put down the category here."
+      options: textarea
+      required: false

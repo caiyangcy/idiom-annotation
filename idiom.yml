@@ -4,7 +4,7 @@ template_name: idiom
 template_label: Idiom
 template_description: Chinese idiom translation quality inspection
 
-examples_link: caiyangcy/idiom-annotation/master/example.json
+examples_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json
 
 interface_text:
   landing_page:

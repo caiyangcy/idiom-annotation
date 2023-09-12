@@ -14,7 +14,6 @@ interface_text:
     drag_drop_after: ' to add an annotation file'
     options_header: or
     tutorial_link: See Tutorial
-    examples_link: View Example Data
     builder_link: Customize this Template
   comment_box:
     label: Comment

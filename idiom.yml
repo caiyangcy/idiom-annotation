@@ -4,7 +4,9 @@ template_name: idiom
 template_label: Idiom
 template_description: Chinese idiom translation quality inspection
 
-instructions: 
+default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json
+
+instructions: |
   ## Chinese idiom translation evaluation
   Please make sure you select the category that best describes the translation
   

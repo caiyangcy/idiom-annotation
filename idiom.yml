@@ -1,3 +1,6 @@
+crowdsource: "prolific"                 
+prolific_completion_code: "CXODGESK" 
+
 tokenization: char
 
 template_name: idiom using thres

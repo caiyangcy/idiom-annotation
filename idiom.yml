@@ -1,7 +1,7 @@
 tokenization: char
 
 template_name: idiom
-template_label: Idiom
+template_label: Idiom using Thres
 template_description: Chinese idiom translation quality inspection
 
 default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json

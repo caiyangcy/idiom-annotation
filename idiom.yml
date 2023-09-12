@@ -2,8 +2,9 @@ tokenization: char
 
 template_name: idiom
 template_label: Idiom
-template_description: Idiom translation quality inspection
+template_description: Chinese idiom translation quality inspection
 
+examples_link: caiyangcy/idiom-annotation/master/example.json
 
 interface_text:
   landing_page:
@@ -15,7 +16,6 @@ interface_text:
     tutorial_link: See Tutorial
     examples_link: View Example Data
     builder_link: Customize this Template
-    paper_link: View Paper
   comment_box:
     label: Comment
     placeholder: Comment on this HIT ...

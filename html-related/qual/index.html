@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Idiom Translation Annotation Tutorial</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://kit.fontawesome.com/c3b36ffc0c.js" crossorigin="anonymous"></script>
+
+    <script src="../js/leader-line.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/vue-form-wizard/dist/vue-form-wizard.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/selection.css">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/select_box.css">
+    <link rel="stylesheet" href="../css/qual.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+</head>
+
+<body class="sans-serif">
+    <div id="app">
+        <form-wizard 
+            @on-complete="onComplete" 
+            @on-change="onChange" 
+            next-button-text="Next" 
+            back-button-text="Back" 
+            finish-button-text="Finish"
+            title="Idiom Translation Annotation Tutorial"
+            ref="wizard"
+            subtitle="">
+            <tab-content title="Introduction">
+                <h1>Introduction</h1>
+                <p>Welcome! In this project you will read simplified Chinese sentences with Chinese idioms and their English translation. Your task is to evaluate and categorize the translation of Chinese idiom.</p>
+
+                <p>This qualification HIT will train you to perform this task. You must be able to:</p>
+
+                <ul>
+                    <li>Understand Chinese idioms (or look up their meaning)</li>
+                    <li>Evaluate the quality of translated Chinese idioms</li>
+                    <li>Identify translation type in each instance</li>
+                </ul>
+
+                <p>Here's the interface we are going to use:</p>
+                <img src="./img/overview.png" alt="Big picture of the task" width="1200">
+                <br />
+            </tab-content>
+
+            <tab-content title="Demographics">
+                <div class="container card mb-3 card-body" id="bodyDemographics">
+                    <p class="mt0 f2 b">Basic Demographics</p>
+  
+                    <p class="f4">We're collecting basic demographic information for use in our research.</p>
+    
+                    <!-- Gender question -->
+                    <p class="f4 mt4 mb1  mb0 b">
+                        What gender do you identify with?
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="gender" value="male"> Male
+                        </li>
+                        <li>
+                            <input type="radio" name="gender" value="female"> Female
+                        </li>
+                        <li>
+                            <input type="radio" name="gender" value="other"> Other:
+                            <input type="text" name="gender-manual" placeholder="Please specify if other">
+                        </li>
+                    </ul>
+    
+                    <!-- Age question -->
+                    <p class="f4 mt4 mb1 mb0 b">
+                        Which category below includes your age?
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="age" value="-17"> 17 or younger
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="18-20"> 18-20
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="21-29"> 21-29
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="30-39"> 30-39
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="40-49"> 40-49
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="50-59"> 50-59
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="60-69"> 60-69
+                        </li>
+                        <li>
+                            <input type="radio" name="age" value="70-"> 70 or older
+                        </li>
+                    </ul>
+    
+                    <!-- Race question -->
+                    <p class="f4 mt4 mb1 mb0 b">
+                        Please select the race(s) which fit you best.
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="race" value="white"> White
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="black"> Black or African-American
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="native"> Native American or Alaskan Native
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="asian"> Asian
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="pacific"> Native Hawaiian or other Pacific
+                            islander
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="hispanic"> Spanish, Hispanic, or Latino
+                        </li>
+                        <li>
+                            <input type="radio" name="race" value="other"> Some other race (please specify)
+                            <input type="text" name="race-manual" placeholder="Please specify if other">
+                        </li>
+                    </ul>
+    
+                    <!-- Education question -->
+                    <p class="f4 mt4 mb1  mb0 b">
+                        Which option best fits the highest level of school you have completed, or the
+                        highest degree you have received?
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="school" value="no-hs"> Less than high school degree
+                        </li>
+                        <li>
+                            <input type="radio" name="school" value="hs"> High school degree or equivalent
+                            (e.g., GED)
+                        </li>
+                        <li>
+                            <input type="radio" name="school" value="some-college"> Some college but no degree
+                        </li>
+                        <li>
+                            <input type="radio" name="school" value="associate"> Associate degree
+                        </li>
+                        <li>
+                            <input type="radio" name="school" value="bachelor"> Bachelor degree
+                        </li>
+                        <li>
+                            <input type="radio" name="school" value="grad"> Graduate degree
+                        </li>
+                    </ul>
+    
+                    <!-- Living in US question -->
+                    <p class="f4 mt4 mb1  mb0 b">
+                        Do you live in the United States?
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="us" value="yes"> Yes
+                        </li>
+                        <li>
+                            <input type="radio" name="us" value="no"> No
+                        </li>
+                    </ul>
+    
+                    <!-- Time in US question -->
+                    <p class="f4 mt4 mb1  mb0 b">
+                        How long have you lived in the U.S.? (if not in U.S., please pick "n/a")
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="time-in-us" value="-1"> Less than 1 year
+                        </li>
+                        <li>
+                            <input type="radio" name="time-in-us" value="1-2"> between 1 and 2 years
+                        </li>
+                        <li>
+                            <input type="radio" name="time-in-us" value="2-5"> between 2 and 5 years
+                        </li>
+                        <li>
+                            <input type="radio" name="time-in-us" value="5-10"> between 5 and 10 years
+                        </li>
+                        <li>
+                            <input type="radio" name="time-in-us" value="10-"> 10 or more years
+                        </li>
+                        <li>
+                            <input type="radio" name="time-in-us" value="none"> n/a
+                        </li>
+                    </ul>
+    
+                    <!-- Native language question -->
+                    <p class="f4 mt4 mb1  mb0 b">
+                        Is English one of your native languages?
+                    </p>
+                    <ul class="f4 list mt0">
+                        <li>
+                            <input type="radio" name="language" value="yes"> Yes
+                        </li>
+                        <li>
+                            <input type="radio" name="language" value="no"> No
+                        </li>
+                    </ul>
+    
+                </div>
+                <!-- / basic demographics card -->
+              </tab-content>
+
+            <tab-content title="Interface Overview">
+                <h1>Interface Overview</h1>
+                <p>We'll begin by an introduction to the features of the annotation interface.</p>
+                <ul>
+                    <li>The main part of the interface is a text box displaying the idiom, Chinese sentences and English translations. </li>
+                    <li>On top left, you will see the current instance number and the total number of instances. </li>
+                    <li>You are also able to jump across instances using the navigator above the text box. </li>
+                    <li>On top right, you will be able to download and upload data, which are not required for this task. </li>
+                    <li>On bottom left, you can see the total number of annotations you have made.</li>
+                    <li>On bottom right, you can add a new annotation by clicking the <i>Add Edit</i> button.</li>
+                    <li>After making an annotation, you can further choose the subcategory or delete it.</li>
+                </ul>
+                To start annotation, you will first click <i>Add Edit</i>, then choosing the correct translation category (details next page), and then selecting the spans of idiom and its translation.
+                You can further choose more fine-grained subcategory for translation type.
+                <p>Here is what the process looks like.</p>
+                <img src="./img/idiom-annotation.gif" alt="Big picture of the task" width="1200">
+                <br />
+            </tab-content>
+            <tab-content title="Translation Annotation">
+                <h1>Translation Categories</h1>
+                <p>
+                    After getting familiar with the interface, we now go through idiom translation cateogries. 
+                    This tutorial will primerily demonstrate how to annotate through examples. When you read through the examples, think about how you would annotate the translation.
+                </p>
+                <p>
+                    Idiom translation categories are developed based on relation between the meaning of Chinese idioms and translated English phrases.
+                    Chinese idioms are usually associated with an original meaning and derived meaning. 
+                    The original meaning of the idiom usually reflects the origination of the idiom.
+                    The derived meaning of the idiom is the one that has evolved throught time and more frequently used.
+                    The original meaning is likely to be literal while the derived meaning can be different from the literal meaning.
+                    However, in some cases, the two meanings are same/close.
+                    A correct translation of a given idiom should be coherent with the context.
+                </p>
+                <p><b>NOTE: </b>In this annotation task, we only pay attention to how idioms are translated. The translation categories are defined with respect to idioms only.
+                </p>
+
+                <p><span style="background-color:#c8e5c4"><b>Good Translation</b></span> 
+                    - idiom translation is of good quality. It further divides into the following subcategories: 
+                    <ul>
+                        <li>
+                            <b> Correct translation of underlying meaning: </b> 
+                            English phrases are translated correctly and reflect the underlying meaning of the Chinese idiom.
+                        </li>
+                        <li>
+                            <b> Literal translation and coherent with context: </b>
+                            English phrases are translated (near) literally from Chinese idoms, 
+                            and the literal translation is coherent with the context. 
+                            This subcategory is used when idioms' underlying meaning is different from literal meaning.
+                        </li>
+                    </ul>
+  
+                </p>
+
+                <h3>Examples</h3>
+                <example-sent  
+                    noedits=true
+                    explanation="欢呼雀跃 is translated correctly into 'cheered and rejoiced'.">
+                    <template #given-idiom><b>Idiom: 欢呼雀跃</b></template>
+                    <template #zh-sent>主断层绕过核电站，停了下来。美国地质调查局的科学家们<span style="background-color:#c8e5c4">欢呼雀跃</span>，却发现断层并未被完全阻止。</template>
+                    <template #en-sent>The main fault bypassed the nuclear power plant and came to a stop. Scientists from the United States Geological Survey <span style="background-color:#c8e5c4">cheered and rejoiced</span>, but they discovered that the fault had not been completely halted.</template>
+                </example-sent>
+
+                <example-sent  
+                    noedits=true
+                    explanation="The original meaning of 项庄舞剑 means the actual intention is not what it appears to be. However, in this case, the idiom is used to refer to the historical story and a literal translation is more appropriate.">
+                    <template #given-idiom><b>Idiom: 项庄舞剑</b></template>
+                    <template #zh-sent>此举指向性明确——挑衅美元，直接让联储局骑虎难下。（更多内容见：《沙特为首的油霸们再捅刀美元 <span style="background-color:#c8e5c4">项庄舞剑</span>意在沛公》）3月，沙特一连串的‘出牌’，是沙特战略转型的重要一步。</template>
+                    <template #en-sent> This move has a clear direction - provoking the US dollar and putting the Federal Reserve in a difficult position. (For more content, see: "Saudi-led oil tycoons stab the US dollar again, <span style="background-color:#c8e5c4">Xiang Zhuang's sword dance</span> is aimed at Pei Gong") In March, Saudi Arabia's series of 'moves' is an important step in its strategic transformation. </template>
+                </example-sent>
+
+
+                <p><span style="background-color:#eba4a2">Mistranslation</span> 
+                    - idiom translation is incorrect or improper. It further divides into the following subcategories: 
+                    <ul>
+                        <li>
+                            <b>Incorrect choices of words, meaning interrupted: </b> 
+                            Idiom is translated incorrectly due to wrong choices of words or phrases,
+                            which interrupts the meaning of the idiom.
+                        </li>
+                        <li>
+                            <b>Improper choices of words, meaning preserved but not completely correct: </b>
+                            Translation preserves the intended meaning but not completely correct,
+                            and it can be improved by choosing of more proper words or phrases.
+                        </li>
+                    </ul>                        
+                </p>
+
+                <example-sent  
+                    noedits=true
+                    explanation="自寻烦恼 means asking for trouble or trouble someone him/herself.">
+                    <template #given-idiom><b>Idiom: 自寻烦恼</b></template>
+                    <template #zh-sent>另一半有时需要一个人安静地思考，此时你不必过多打扰，问得太多只会<span style="background-color:#eba4a2">自寻烦恼</span>。</template>
+                    <template #en-sent> The other half sometimes needs someone to think quietly by themselves, at which point you don't need to disturb them too much. Asking too many questions will only <span style="background-color:#eba4a2">bring them problems</span>.' </template>
+                </example-sent>
+
+                 <example-sent  
+                    noedits=true
+                    explanation="敌国外患 means threats of enemy countries. Translating it into enemy countries does not hurt the understanding of it, but it can be further improved.">
+                    <template #given-idiom><b>Idiom: 敌国外患</b></template>
+                    <template #zh-sent>无<span style="background-color:#eba4a2">敌国外患者</span>者，国恒亡。</template>
+                    <template #en-sent> Without <span style="background-color:#eba4a2">a foreign enemy</span>, the country will perish' </template>
+                </example-sent>
+
+
+                <p><span style="background-color:#9cd1d5">Literal Translation</span> 
+                    - idiom is translated literally and translation is not coherent with context. 
+                    In other words, the correct translation is supposed to be the underlying meaning, which is not the same as the literal meaning.
+                </p>
+
+                <example-sent  
+                    noedits=true
+                    explanation="身无长处 is translated literally here. 身(in this life)无(no)长处(merits)">
+                    <template #given-idiom><b>Idiom: 身无长处</b></template>
+                    <template #zh-sent>我爸临终时候说，这一生<span style="background-color:#9cd1d5">身无长处</span>，不曾留下什么给我</template>
+                    <template #en-sent> My father said when he was dying, 'I have <span style="background-color:#9cd1d5">no merits in this life</span>, I have not left anything for you.' </template>
+                </example-sent>
+
+
+                <p><span style="background-color:#eecbb7">Partial Translation</span> 
+                    - idiom is translated partially. It further divides into the following subcategories: 
+                    <ul>
+                        <li>
+                            <b>Sub-phrase not translated:</b>
+                            Some words of the original idiom is not translated.
+                        </li>
+                        <li>
+                            <b>Inaccurate/Missing Modifier:</b>
+                            Although the core meaning of the idiom is translated correctly, 
+                            but it needs more description (modifiers) to convey the meaning in Chinese sentences.
+                            <!-- This error is commonly seen on subjective-like idioms and modifiers are usually additional adverbs. -->
+                        </li>
+                    </ul>
+                </p>
+
+                <example-sent  
+                    noedits=true
+                    explanation="Only first half of 此处不留人，自有留人处 is translated.">
+                    <template #given-idiom><b>Idiom: 此处不留人，自有留人处</b></template>
+                    <template #zh-sent>再者，平台繁多，<span style="background-color:#c8e5c4">此处不留人，自有留人处</span>，对于这类无良民宿，仅靠平台按现行规则管制，并不足以纠偏。。</template>
+                    <template #en-sent>Also, there are many agencies, <span style="background-color:#c8e5c4">there is no place to stay</span>, and against these bad inns, only the agencies with the current rules cannot adequately curb the abuse.</template>
+                </example-sent>
+
+                <example-sent  
+                    noedits=true
+                    explanation="欢呼雀跃 is translated correctly into 'cheered', however, the original idioms means more than  .">
+                    <template #given-idiom><b>Idiom: 欢呼雀跃</b></template>
+                    <template #zh-sent>主断层绕过核电站，停了下来。美国地质调查局的科学家们<span style="background-color:#c8e5c4">欢呼雀跃</span>，却发现断层并未被完全阻止。</template>
+                    <template #en-sent>The main fault bypassed the nuclear power plant and came to a stop. Scientists from the United States Geological Survey <span style="background-color:#c8e5c4">cheered and rejoiced</span>, but they discovered that the fault had not been completely halted.</template>
+                </example-sent>
+
+                <p><span style="background-color:#ea3ff7">Repetition</span> 
+                    - translation of idioms contain repeated words or phrases, or their synonyms. 
+                    In this category, we require the repeated part itself to be correct translation, otherwise it is considered to be Mistranslation.
+                </p>
+
+                <example-sent  
+                    noedits=true
+                    explanation="如兄如弟 means the relationship is like brothers. In this case the translation is repeated twice.">
+                    <template #given-idiom><b>Idiom: 如兄如弟</b></template>
+                    <template #zh-sent>我认为最佳的父子关系应该<span style="background-color:#ea3ff7">如兄如弟</span>。</template>
+                    <template #en-sent> I think the best relationship between a father and son should be like <span style="background-color:#eba4a2">that of a brother and a brother</span>. </template>
+                </example-sent>
+
+                <p><span style="background-color:#9fc6f2">No Translation</span> 
+                    - there is no translation of the idiom in the English sentences. It could be due to the following reasons:
+                    <ul>
+                        <li>
+                            <b>Chinese copy-pasted or paraphrased: </b> 
+                            Idiom is present in Chinese in English sentences, either copy-pasted or paraphrased.
+                        </li>
+                        <li>
+                            <b>Missing from the output: </b>
+                            Idiom cannot be found in English sentences.
+                        </li>
+                    </ul>
+                    For <i>No Translation</i>, only the idiom in the Chinese sentences is highlighted.
+                </p>
+
+                <example-sent  
+                    noedits=true
+                    explanation="早出晚归 is not translated and remained in Chinese text.">
+                    <template #given-idiom><b>Idiom: 早出晚归</b></template>
+                    <template #zh-sent>他指平日儿子和媳妇都<span style="background-color:#9fc6f2">早出晚归</span>，只有他们两老和两名孙女在家，他担心对方会变本加厉。</template>
+                    <template #en-sent>He指平日儿子和媳妇都早出晚归，只有他们两老和两名孙女在家，他担心对方会变本加厉。 </template>
+                </example-sent>
+
+
+                <example-sent  
+                    noedits=true
+                    explanation="不速之客 is not translated and missing from the English sentences.">
+                    <template #given-idiom><b>Idiom: 不速之客</b></template>
+                    <template #zh-sent>伊拉斯谟当时正从布隆泉（Bloemfontein）飞向普利托利亚，除了<span style="background-color:#9fc6f2">不速之客</span>的蛇外，机上还载了4名乘客。</template>
+                    <template #en-sent>Irascible was flying from Bloemfontein to Puerto Rico and had four other passengers on board, including the snake. </template>
+                </example-sent>
+
+
+                <p><span style="background-color:#c0c0c0">Other</span> 
+                    - Other translation errors that cannot be described by categories above.
+                </p>
+
+                <p><b>NOTE: </b>
+                    The boundary between some categories may be blurry.
+                    Some idiom translations may fall into multiple cateogries. In that case, please find the one that describes the error most accurately.
+                    If you find it difficult to categorize the error into one class, then annotate each subphrase with its corresponding categories.
+                </p>
+
+            </tab-content>
+            
+            <tab-content title="Warmup">
+                <h1>Warmup Test</h1>
+                <p>
+                    Here are some translation pairs as a warmup study to test your understandings.
+                </p>
+                <div>
+                    <iframe src="https://thresh.tools/?gh=caiyangcy/idiom-annotation/master/idiom.yml&d=caiyangcy/idiom-annotation/master/tutorial_only.json" width="100%" height="900"></iframe>
+                </div>
+                
+            </tab-content>
+
+            <tab-content title="Warmup Answers">
+                <h1>Warmup Answers</h1>
+                <p>
+                    In this page, you can find answers to previous warmup test. Make sure you understand the annotation result of each instance.
+                </p>
+                <div>
+                    <iframe src="https://thresh.tools/?gh=caiyangcy/idiom-annotation/master/idiom.yml&d=caiyangcy/idiom-annotation/master/tutorial_annotation.json" width="100%" height="900"></iframe>
+                </div>
+                
+                
+            </tab-content>
+
+            <tab-content title="Optional Feedback">
+                <div class="container card mb-3 card-body" id="bodyFeedback">
+  
+                  <!--Motivation text -->
+                  <p class="mt0 f2 b">Optional Feedback</p>
+  
+                  <p class=" lh-copy f4">
+                      If you have any feedback about improving this task, you can let
+                      us know here! Completely optional / not required.
+                  </p>
+                  <textarea id="feedback" name="feedback" class="mf-textarea"></textarea>
+                </div>
+            </tab-content>
+
+            <tab-content title="Quiz">
+                <p>
+                    Let's now do a quiz. In the end, click <i>Submit</i> button to redirect to Prolific.
+                </p>
+                <!-- <div style="width: 1000px;
+                height: 800px;
+                margin: 0 auto;">
+                    <iframe src="https://thresh.tools/?gh=caiyangcy/idiom-annotation/master/idiom.yml&d=caiyangcy/idiom-annotation/master/quiz_only.json" width="1100" height="700"></iframe>
+                </div> -->
+
+                <div>
+                    <iframe src="https://thresh.tools/?gh=caiyangcy/idiom-annotation/master/idiom.yml&d=caiyangcy/idiom-annotation/master/quiz_only.json" width="100%" height="900" ></iframe>
+                </div>
+
+            </tab-content>
+
+        </form-wizard>
+    </div>
+
+</body>
+<script src="../js/qual.js"></script>
+</html>

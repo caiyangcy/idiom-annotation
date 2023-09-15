@@ -1,0 +1,101 @@
+tokenization: char
+
+template_name: idiom using thres
+template_label: Idiom Using Thres
+template_description: Chinese idiom translation quality inspection
+
+
+default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json
+
+instructions: |
+  ## Chinese idiom translation evaluation
+  Please make sure you select the category that best describes the translation
+  
+
+interface_text:
+  typology:
+    context_label: Context
+    source_label: Chinese Input
+    target_label: English Translation
+
+
+edits:
+  - name: good
+    label: "Good"
+    color: green
+    icon: fa-check
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: good_type
+        question: "Select the sub-category for good translation."
+        options:
+          - name: correct_underlying
+            label: "Correct translation of underlying meaning"
+          - name: literal_coherent
+            label: "Literal translation and coherent with context"
+  - name: mistranslation
+    label: "Mistranslation"
+    color: red
+    icon: fa-xmark
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: mis_type
+        question: "Select the sub-category for mistranslation."
+        options:
+          - name: correct_underlying
+            label: "Incorrect choices of words, meaning interrupted"
+          - name: literal_coherent
+            label: "Improper choices of words, meaning preserved but not completely correct"
+  - name: literal_translation
+    label: "Literal Translation"
+    color: teal
+    icon: fa-clone
+    enable_input: true   
+    enable_output: true    
+  - name: partial_translation
+    label: "Partial Translation"
+    color: orange
+    icon: fa-star-half
+    enable_input: true 
+    enable_output: true   
+    annotation:
+      - name: partial_type
+        question: "Select the sub-category for partial translation."
+        options:
+          - name: subphrase_not_translated
+            label: "Sub-phrase not translated"
+          - name: inaccurate_modifier
+            label: "Inaccurate/Missing Modifier"
+  - name: repetition
+    label: "Repetition"
+    color: purple
+    icon: fa-repeat
+    enable_input: true   
+    enable_output: true  
+  - name: no_translation
+    label: "No Translation"
+    icon: fa-eye-slash
+    color: blue
+    enable_input: true   
+    annotation:
+      - name: notrans_type
+        question: "Select the sub-category for no translation."
+        options:
+          - name: chinese_cp_ph
+            label: "Chinese copy-pasted or paraphrased"
+          - name: missing_output
+            label: "Missing from the output"
+  - name: other
+    label: "Other"
+    color: grey
+    icon: fa-ellipsis
+    enable_input: true   
+    enable_output: true   
+    annotation:
+    - name: explanation
+      label: "Explanation"
+      question: "Put down the category here."
+      options: textarea
+      required: false

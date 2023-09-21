@@ -57,7 +57,7 @@ edits:
         label: "Errors present"
         question: "What are the present error categories? Only required for multiple errors."
         options: textarea
-
+        required: false
 
   - name: literal_translation
     label: "Literal Translation"

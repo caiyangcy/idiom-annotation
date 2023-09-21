@@ -60,7 +60,7 @@ edits:
             question: "Rate the severity"
             options: likert-3
           - name: more_than_one
-            label: "Combination of more than one error cateogry"
+            label: "More than one error cateogry"
             question: "Rate the severity"
             options: likert-3
 
@@ -68,6 +68,7 @@ edits:
         label: "Errors present"
         question: "What are the present error categories? Only required for multiple errors."
         options: textarea
+        required: false
 
 
   - name: literal_translation

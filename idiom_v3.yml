@@ -65,7 +65,7 @@ edits:
             options: likert-3
 
       - name: mis_multi_error_explanation
-        label: "Explanation"
+        label: "Errors present"
         question: "What are the present error categories? Only required for multiple errors."
         options: textarea
 

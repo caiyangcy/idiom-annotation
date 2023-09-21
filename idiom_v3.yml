@@ -62,7 +62,7 @@ edits:
           - name: more_than_one
             label: "Combination of more than one error cateogry"
 
-            annotation:
+            options:
               - name: mis_multi_error_explanation
                 label: "Explanation"
                 question: "What are the error categories?"

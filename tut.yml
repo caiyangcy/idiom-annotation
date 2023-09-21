@@ -45,15 +45,21 @@ edits:
         question: "Select the sub-category for mistranslation."
         options:
           - name: correct_underlying
-            label: "Incorrect choices of words, meaning interrupted"
-          - name: literal_coherent
-            label: "Improper choices of words, meaning preserved but not completely correct"
+            label: "Incorrect choices of words"
+            question: "Rate the severity"
+            options: likert-3
+          - name: more_than_one
+            label: "Combination of more than one error cateogry"
+            question: "Rate the severity"
+            options: likert-3
   - name: literal_translation
     label: "Literal Translation"
     color: teal
     icon: fa-clone
     enable_input: true   
     enable_output: true    
+    question: "Rate the severity"
+    options: likert-3
   - name: partial_translation
     label: "Partial Translation"
     color: orange
@@ -64,16 +70,26 @@ edits:
       - name: partial_type
         question: "Select the sub-category for partial translation."
         options:
-          - name: subphrase_not_translated
-            label: "Sub-phrase not translated"
+          - name: missing_modifier
+            label: "Missing modifier"
+            question: "Rate the severity"
+            options: likert-3
+          - name: missing_core_info
+            label: "Missing core info"
+            question: "Rate the severity"
+            options: likert-3
           - name: inaccurate_modifier
-            label: "Inaccurate/Missing Modifier"
+            label: "Inaccurate modifier"
+            question: "Rate the severity"
+            options: likert-3
   - name: repetition
     label: "Repetition"
     color: purple
     icon: fa-repeat
     enable_input: true   
-    enable_output: true  
+    enable_output: true
+    question: "Rate the severity"
+    options: likert-3
   - name: no_translation
     label: "No Translation"
     icon: fa-eye-slash
@@ -85,8 +101,12 @@ edits:
         options:
           - name: chinese_cp_ph
             label: "Chinese copy-pasted or paraphrased"
+            question: "Rate the severity"
+            options: likert-3
           - name: missing_output
             label: "Missing from the output"
+            question: "Rate the severity"
+            options: likert-3
   - name: other
     label: "Other"
     color: grey
@@ -99,3 +119,7 @@ edits:
       question: "Put down the category here."
       options: textarea
       required: false
+    - name: severity
+      label: "Severity"
+      question: "Rate the severity."
+      options: likert-3

@@ -70,6 +70,8 @@ edits:
     enable_input: true   
     enable_output: true    
     annotation:
+    - name: severity
+      label: "Severity"
       question: "Rate the severity"
       options: likert-3
   - name: partial_translation

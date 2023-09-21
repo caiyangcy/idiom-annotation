@@ -61,17 +61,13 @@ edits:
             options: likert-3
           - name: more_than_one
             label: "Combination of more than one error cateogry"
+            question: "Rate the severity"
+            options: likert-3
 
-            options:
-              - name: mis_multi_error_explanation
-                label: "Explanation"
-                question: "What are the error categories?"
-                options: textarea
-
-              - name: mis_multi_error_severity
-                label: "Severity"
-                question: "Rate the severity"
-                options: likert-3
+      - name: mis_multi_error_explanation
+        label: "Explanation"
+        question: "What are the present error categories? Only required for multiple errors."
+        options: textarea
 
 
   - name: literal_translation

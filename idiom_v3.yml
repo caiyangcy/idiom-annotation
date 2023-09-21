@@ -69,7 +69,6 @@ edits:
     icon: fa-clone
     enable_input: true   
     enable_output: true    
-    annotation:
 
   - name: partial_translation
     label: "Partial Translation"

@@ -70,7 +70,9 @@ edits:
     enable_input: true   
     enable_output: true    
     annotation:
-      - question: "Rate the severity"
+      - name: literal_severity
+        label: "Severity"
+        question: "Rate the severity"
         options: likert-3
   - name: partial_translation
     label: "Partial Translation"
@@ -100,8 +102,12 @@ edits:
     icon: fa-repeat
     enable_input: true   
     enable_output: true
-    question: "Rate the severity"
-    options: likert-3
+    annotation:
+      - name: repetition_severity
+        label: "Severity"
+        question: "Rate the severity"
+        options: likert-3
+
   - name: no_translation
     label: "No Translation"
     icon: fa-eye-slash
@@ -126,12 +132,12 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
-    - name: explanation
-      label: "Explanation"
-      question: "Put down the category here."
-      options: textarea
-      required: false
-    - name: severity
-      label: "Severity"
-      question: "Rate the severity."
-      options: likert-3
+      - name: explanation
+        label: "Explanation"
+        question: "Put down the category here."
+        options: textarea
+        required: false
+      - name: other_severity
+        label: "Severity"
+        question: "Rate the severity."
+        options: likert-3

@@ -69,8 +69,9 @@ edits:
     icon: fa-clone
     enable_input: true   
     enable_output: true    
-    question: "Rate the severity"
-    options: likert-3
+    annotation:
+      question: "Rate the severity"
+      options: likert-3
   - name: partial_translation
     label: "Partial Translation"
     color: orange

@@ -49,17 +49,27 @@ edits:
             question: "Rate the severity"
             options: likert-3
           - name: more_than_one
-            label: "Combination of more than one error cateogry"
+            label: "More than one error cateogry"
             question: "Rate the severity"
             options: likert-3
+
+      - name: mis_multi_error_explanation
+        label: "Errors present"
+        question: "What are the present error categories? Only required for multiple errors."
+        options: textarea
+
+
   - name: literal_translation
     label: "Literal Translation"
     color: teal
     icon: fa-clone
     enable_input: true   
     enable_output: true    
-    question: "Rate the severity"
-    options: likert-3
+    annotation:
+      - name: literal_severity
+        label: "Severity"
+        question: "Rate the severity"
+        options: likert-3
   - name: partial_translation
     label: "Partial Translation"
     color: orange
@@ -88,8 +98,12 @@ edits:
     icon: fa-repeat
     enable_input: true   
     enable_output: true
-    question: "Rate the severity"
-    options: likert-3
+    annotation:
+      - name: repetition_severity
+        label: "Severity"
+        question: "Rate the severity"
+        options: likert-3
+
   - name: no_translation
     label: "No Translation"
     icon: fa-eye-slash
@@ -114,12 +128,12 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
-    - name: explanation
-      label: "Explanation"
-      question: "Put down the category here."
-      options: textarea
-      required: false
-    - name: severity
-      label: "Severity"
-      question: "Rate the severity."
-      options: likert-3
+      - name: other_explanation
+        label: "Explanation"
+        question: "Put down the category here."
+        options: textarea
+        required: false
+      - name: other_severity
+        label: "Severity"
+        question: "Rate the severity."
+        options: likert-3

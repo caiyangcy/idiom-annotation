@@ -60,12 +60,15 @@ edits:
         options:
           - name: incorrect_choices
             label: "Incorrect choices of words"
-            question: "Rate the severity"
-            options: likert-3
+
           - name: more_than_one
             label: "More than one error cateogry"
             question: "What are the present error categories? Only required for multiple errors."
             options: textarea
+            
+      - name: mis_severity
+        question: "Rate the severity"
+        options: likert-3
 
   - name: literal_translation
     label: "Literal Translation"

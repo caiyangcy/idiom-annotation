@@ -63,9 +63,10 @@ edits:
 
           - name: more_than_one
             label: "More than one error cateogry"
-            question: "What are the present error categories? Only required for multiple errors."
-            options: textarea
-            
+            required:
+              - question: "What are the present error categories? Only required for multiple errors."
+              - options: textarea
+
       - name: mis_severity
         question: "Rate the severity"
         options: likert-3
@@ -94,16 +95,14 @@ edits:
         options:
           - name: missing_modifier
             label: "Missing modifier"
-            question: "Rate the severity"
-            options: likert-3
           - name: missing_core_info
             label: "Missing core info"
-            question: "Rate the severity"
-            options: likert-3
           - name: inaccurate_modifier
             label: "Inaccurate modifier"
-            question: "Rate the severity"
-            options: likert-3
+
+      - name: partial_severity
+        question: "Rate the severity"
+        options: likert-3
 
   - name: repetition
     label: "Repetition"

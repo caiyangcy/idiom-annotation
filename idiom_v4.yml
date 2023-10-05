@@ -63,7 +63,6 @@ edits:
 
           - name: more_than_one
             label: "More than one error cateogry"
-            required: true
             question: "What are the present error categories? Only required for multiple errors."
             options: textarea
 

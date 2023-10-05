@@ -66,6 +66,7 @@ edits:
             label: "More than one error cateogry"
             question: "What are the present error categories? Only required for multiple errors."
             options: textarea
+            required: true
 
   - name: literal_translation
     label: "Literal Translation"
@@ -143,7 +144,7 @@ edits:
         label: "Explanation"
         question: "Put down the category here."
         options: textarea
-        required: false
+        required: true
       - name: other_severity
         label: "Severity"
         question: "Rate the severity."

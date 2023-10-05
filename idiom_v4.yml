@@ -3,8 +3,8 @@ prolific_completion_code: "C1F7YHDC"
 
 tokenization: char
 
-template_name: idiom using thres
-template_label: Idiom Using Thres
+template_name: idiom using Thresh
+template_label: Idiom Using Thresh
 template_description: Chinese idiom translation quality inspection
 
 database: 

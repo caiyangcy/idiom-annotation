@@ -29,7 +29,6 @@ interface_text:
     source_label: Chinese Input
     target_label: English Translation
 
-
 edits:
   - name: good
     label: "Good"
@@ -46,7 +45,11 @@ edits:
           - name: literal_coherent
             label: "Literal translation and coherent with context"
           - name: fine_but_can_improve
-            label: ""
+            label: "Good but unnatural"
+
+      - name: good_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
 
   - name: mistranslation
     label: "Mistranslation"
@@ -63,11 +66,15 @@ edits:
 
           - name: more_than_one
             label: "More than one error cateogry"
-            question: "What are the present error categories? Only required for multiple errors."
+            question: "What are the present error categories?"
             options: textarea
 
       - name: mis_severity
         question: "Rate the severity"
+        options: likert-3
+
+      - name: mis_confidence
+        question: "What's your confidence on your choice?"
         options: likert-3
 
   - name: literal_translation
@@ -80,6 +87,10 @@ edits:
       - name: literal_severity
         label: "Severity"
         question: "Rate the severity"
+        options: likert-3
+
+      - name: literal_confidence
+        question: "What's your confidence on your choice?"
         options: likert-3
         
   - name: partial_translation
@@ -103,6 +114,10 @@ edits:
         question: "Rate the severity"
         options: likert-3
 
+      - name: partial_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
   - name: repetition
     label: "Repetition"
     color: purple
@@ -111,8 +126,11 @@ edits:
     enable_output: true
     annotation:
       - name: repetition_severity
-        label: "Severity"
         question: "Rate the severity"
+        options: likert-3
+    
+      - name: reptition_confidence
+        question: "What's your confidence on your choice?"
         options: likert-3
 
   - name: no_translation
@@ -126,12 +144,17 @@ edits:
         options:
           - name: chinese_cp_ph
             label: "Chinese copy-pasted or paraphrased"
-            question: "Rate the severity"
-            options: likert-3
           - name: missing_output
             label: "Missing from the output"
-            question: "Rate the severity"
-            options: likert-3
+
+      - name: notrans_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: notrans_confidence
+        label: "Confidence"
+        question: "What's your confidence on your choice?"
+        options: likert-3
 
   - name: other
     label: "Other"
@@ -141,10 +164,11 @@ edits:
     enable_output: true   
     annotation:
       - name: other_explanation
-        label: "Explanation"
         question: "Put down the category here."
         options: textarea
       - name: other_severity
-        label: "Severity"
         question: "Rate the severity."
+        options: likert-3
+      - name: other_confidence
+        question: "What's your confidence on your choice?"
         options: likert-3

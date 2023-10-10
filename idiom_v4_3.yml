@@ -38,9 +38,10 @@ edits:
     enable_output: true  
     annotation:
       - name: good_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
+
       - name: good_type
         question: "Select the sub-category for good translation."
         options:
@@ -61,8 +62,8 @@ edits:
     enable_output: true  
     annotation:
       - name: mis_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: mis_severity
@@ -81,8 +82,8 @@ edits:
     enable_output: true  
     annotation:
       - name: unnatural_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: unnatural_severity
@@ -101,8 +102,8 @@ edits:
     enable_output: true    
     annotation:
       - name: literal_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: literal_severity
@@ -122,8 +123,8 @@ edits:
     enable_output: true   
     annotation:
       - name: partial_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: partial_type
@@ -152,8 +153,8 @@ edits:
     enable_output: true
     annotation:
       - name: repetition_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: repetition_severity
@@ -171,8 +172,8 @@ edits:
     enable_input: true   
     annotation:
       - name: notrans_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
 
       - name: notrans_type
@@ -200,8 +201,8 @@ edits:
     enable_output: true   
     annotation:
       - name: mto_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
       - name: mto_explanation
         question: "What are the present error categories?"
@@ -221,8 +222,8 @@ edits:
     enable_output: true   
     annotation:
       - name: other_identification
-        label: "Identification"                        
-        question: "Is the usage of idiom clearly identified in the translation?"     
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
         options: binary
       - name: other_explanation
         question: "Put down the category here."

@@ -37,7 +37,7 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
-      - name: binary_question
+      - name: good_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -60,7 +60,7 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
-      - name: binary_question
+      - name: mis_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -80,7 +80,7 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
-      - name: binary_question
+      - name: unnatural_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -100,7 +100,7 @@ edits:
     enable_input: true   
     enable_output: true    
     annotation:
-      - name: binary_question
+      - name: literal_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -121,7 +121,7 @@ edits:
     enable_input: true 
     enable_output: true   
     annotation:
-      - name: binary_question
+      - name: partial_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -151,7 +151,7 @@ edits:
     enable_input: true   
     enable_output: true
     annotation:
-      - name: binary_question
+      - name: repetition_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -170,7 +170,7 @@ edits:
     color: blue
     enable_input: true   
     annotation:
-      - name: binary_question
+      - name: notrans_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -199,7 +199,7 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
-      - name: binary_question
+      - name: mto_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary
@@ -220,7 +220,7 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
-      - name: binary_question
+      - name: other_identification
         label: "Identification"                        
         question: "Is the translation able to identify the idiom?"     
         options: binary

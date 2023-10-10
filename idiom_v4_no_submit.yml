@@ -1,9 +1,17 @@
-
 tokenization: char
 
 template_name: idiom using thresh
 template_label: Idiom Using Thresh
 template_description: Chinese idiom translation quality inspection
+
+database: 
+  type: firebase
+  project_id: idiom-test-f05f5
+  url: https://idiom-test-f05f5-default-rtdb.firebaseio.com/
+  collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
+  document: annotation    # (default: annotation) The document to use, this must exist on the firestore
+  field: pilot   # The document field to store annotations, we recommend changing this value between data collection runs
+
 
 default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json
 
@@ -26,6 +34,11 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
+      - name: good_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: good_type
         question: "Select the sub-category for good translation."
         options:
@@ -33,8 +46,6 @@ edits:
             label: "Correct translation of underlying meaning"
           - name: literal_coherent
             label: "Literal translation and coherent with context"
-          - name: fine_but_can_improve
-            label: "Good but unnatural"
 
       - name: good_confidence
         question: "What's your confidence on your choice?"
@@ -47,11 +58,36 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
+      - name: mis_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: mis_severity
         question: "Rate the severity"
         options: likert-3
 
       - name: mis_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: unnatural
+    label: "Unnatural"
+    color: "#2f363f"
+    icon: fa-road-barrier
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: unnatural_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: unnatural_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: unnatural_confidence
         question: "What's your confidence on your choice?"
         options: likert-3
 
@@ -62,6 +98,11 @@ edits:
     enable_input: true   
     enable_output: true    
     annotation:
+      - name: literal_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: literal_severity
         label: "Severity"
         question: "Rate the severity"
@@ -78,6 +119,11 @@ edits:
     enable_input: true 
     enable_output: true   
     annotation:
+      - name: partial_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: partial_type
         question: "Select the sub-category for partial translation."
         options:
@@ -103,6 +149,11 @@ edits:
     enable_input: true   
     enable_output: true
     annotation:
+      - name: repetition_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: repetition_severity
         question: "Rate the severity"
         options: likert-3
@@ -117,6 +168,11 @@ edits:
     color: blue
     enable_input: true   
     annotation:
+      - name: notrans_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
       - name: notrans_type
         question: "Select the sub-category for no translation."
         options:
@@ -141,6 +197,10 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
+      - name: mto_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
       - name: mto_explanation
         question: "What are the present error categories?"
         options: textarea
@@ -158,6 +218,10 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
+      - name: other_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
       - name: other_explanation
         question: "Put down the category here."
         options: textarea

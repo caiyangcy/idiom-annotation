@@ -39,7 +39,7 @@ edits:
     annotation:
       - name: good_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
       - name: good_type
         question: "Select the sub-category for good translation."
@@ -62,7 +62,7 @@ edits:
     annotation:
       - name: mis_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: mis_severity
@@ -82,7 +82,7 @@ edits:
     annotation:
       - name: unnatural_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: unnatural_severity
@@ -102,7 +102,7 @@ edits:
     annotation:
       - name: literal_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: literal_severity
@@ -123,7 +123,7 @@ edits:
     annotation:
       - name: partial_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: partial_type
@@ -153,7 +153,7 @@ edits:
     annotation:
       - name: repetition_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: repetition_severity
@@ -172,7 +172,7 @@ edits:
     annotation:
       - name: notrans_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
 
       - name: notrans_type
@@ -201,7 +201,7 @@ edits:
     annotation:
       - name: mto_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
       - name: mto_explanation
         question: "What are the present error categories?"
@@ -222,7 +222,7 @@ edits:
     annotation:
       - name: other_identification
         label: "Identification"                        
-        question: "Is the translation able to identify the idiom?"     
+        question: "Is the usage of idiom clearly identified in the translation?"     
         options: binary
       - name: other_explanation
         question: "Put down the category here."

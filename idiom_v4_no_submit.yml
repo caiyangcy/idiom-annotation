@@ -34,6 +34,11 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
+      - name: good_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: good_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -58,6 +63,11 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
+      - name: mis_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: mis_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -78,6 +88,11 @@ edits:
     enable_input: true  
     enable_output: true  
     annotation:
+      - name: unnatural_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: unnatural_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -98,6 +113,11 @@ edits:
     enable_input: true   
     enable_output: true    
     annotation:
+      - name: literal_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: literal_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -111,7 +131,33 @@ edits:
       - name: literal_confidence
         question: "What's your confidence on your choice?"
         options: likert-3
-        
+  
+  - name: addition
+    label: "Addition"
+    color: "#7d2e0b"
+    icon: fa-plus
+    enable_input: true   
+    enable_output: true
+    annotation:
+      - name: addition_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: addition_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: addition_severity
+        question: "Rate the severity"
+        options: likert-3
+    
+      - name: addition_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+
   - name: partial_translation
     label: "Partial Translation"
     color: orange
@@ -119,6 +165,11 @@ edits:
     enable_input: true 
     enable_output: true   
     annotation:
+      - name: partial_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: partial_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -149,6 +200,11 @@ edits:
     enable_input: true   
     enable_output: true
     annotation:
+      - name: repetition_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: repetition_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -168,6 +224,11 @@ edits:
     color: blue
     enable_input: true   
     annotation:
+      - name: notrans_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
       - name: notrans_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -197,6 +258,10 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
+      - name: mto_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
       - name: mto_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     
@@ -218,6 +283,10 @@ edits:
     enable_input: true   
     enable_output: true   
     annotation:
+      - name: other_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
       - name: other_identification
         label: "Identified"                        
         question: "Is the boundary of idiom clearly identified in the translation?"     

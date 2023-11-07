@@ -1,5 +1,5 @@
 crowdsource: "prolific"                 
-prolific_completion_code: "COLAB1B2" 
+prolific_completion_code: "C1JA9AKO" 
 
 tokenization: char
 
@@ -14,7 +14,7 @@ database:
   url: https://idiom-403314-default-rtdb.firebaseio.com/
   collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
   document: annotation    # (default: annotation) The document to use, this must exist on the firestore
-  field: main_s1p5   # The document field to store annotations, we recommend changing this value between data collection runs
+  field: main_s2p5   # The document field to store annotations, we recommend changing this value between data collection runs
 
 
 default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json

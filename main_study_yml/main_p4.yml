@@ -13,7 +13,7 @@ database:
   project_id: idiom-403314
   url: https://idiom-403314-default-rtdb.firebaseio.com/
   collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
-  document: series_4    # (default: annotation) The document to use, this must exist on the firestore
+  document: series_4_p4    # (default: annotation) The document to use, this must exist on the firestore
   field: main_s4p4   # The document field to store annotations, we recommend changing this value between data collection runs
 
 

@@ -1,0 +1,279 @@
+crowdsource: "prolific"                 
+prolific_completion_code: "CIT22ECH" 
+
+tokenization: char
+
+template_name: idiom using thresh
+template_label: Idiom Using Thresh
+template_description: Chinese idiom translation quality inspection
+
+database: 
+  type: firebase
+  project_id: idiom-test-f05f5
+  url: https://idiom-test-f05f5-default-rtdb.firebaseio.com/
+  collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
+  document: annotation    # (default: annotation) The document to use, this must exist on the firestore
+  field: pilot2   # The document field to store annotations, we recommend changing this value between data collection runs
+
+default_data_link: https://raw.githubusercontent.com/caiyangcy/idiom-annotation/master/example.json
+
+instructions: |
+  ## Chinese idiom translation evaluation
+  Please make sure you select the category that best describes the translation
+  
+
+interface_text:
+  typology:
+    context_label: Context
+    source_label: Chinese Input
+    target_label: English Translation
+
+edits:
+  - name: good
+    label: "Good"
+    color: green
+    icon: fa-check
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: good_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: good_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: good_type
+        question: "Select the sub-category for good translation."
+        options:
+          - name: correct_underlying
+            label: "Correct translation of underlying meaning"
+          - name: literal_coherent
+            label: "Literal translation and coherent with context"
+
+      - name: good_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: mistranslation
+    label: "Mistranslation"
+    color: red
+    icon: fa-xmark
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: mis_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: mis_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: mis_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: mis_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: unnatural
+    label: "Unnatural"
+    color: "#2f363f"
+    icon: fa-road-barrier
+    enable_input: true  
+    enable_output: true  
+    annotation:
+      - name: unnatural_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: unnatural_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: unnatural_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: unnatural_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: literal_translation
+    label: "Literal Translation"
+    color: teal
+    icon: fa-clone
+    enable_input: true   
+    enable_output: true    
+    annotation:
+      - name: literal_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: literal_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: literal_severity
+        label: "Severity"
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: literal_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+  
+  - name: addition
+    label: "Addition"
+    color: "#7d2e0b"
+    icon: fa-plus
+    enable_input: true   
+    enable_output: true
+    annotation:
+      - name: addition_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: addition_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: addition_severity
+        question: "Rate the severity"
+        options: likert-3
+    
+      - name: addition_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+
+  - name: partial_translation
+    label: "Partial Translation"
+    color: orange
+    icon: fa-star-half
+    enable_input: true 
+    enable_output: true   
+    annotation:
+      - name: partial_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: partial_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: partial_type
+        question: "Select the sub-category for partial translation."
+        options:
+          - name: missing_modifier
+            label: "Missing modifier"
+          - name: missing_core_info
+            label: "Missing core info"
+          - name: inaccurate_modifier
+            label: "Inaccurate modifier"
+
+      - name: partial_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: partial_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: repetition
+    label: "Repetition"
+    color: purple
+    icon: fa-repeat
+    enable_input: true   
+    enable_output: true
+    annotation:
+      - name: repetition_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: repetition_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: repetition_severity
+        question: "Rate the severity"
+        options: likert-3
+    
+      - name: reptition_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: no_translation
+    label: "No Translation"
+    icon: fa-eye-slash
+    color: blue
+    enable_input: true   
+    annotation:
+      - name: notrans_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+
+      - name: notrans_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+
+      - name: notrans_type
+        question: "Select the sub-category for no translation."
+        options:
+          - name: chinese_cp_ph
+            label: "Chinese copy-pasted or paraphrased"
+          - name: missing_output
+            label: "Missing from the output"
+
+      - name: notrans_severity
+        question: "Rate the severity"
+        options: likert-3
+
+      - name: notrans_confidence
+        label: "Confidence"
+        question: "What's your confidence on your choice?"
+        options: likert-3
+
+  - name: more_than_one
+    label: "More Than One"
+    color: '#b89c00'
+    icon: fa-layer-group
+    enable_input: true   
+    enable_output: true   
+    annotation:
+      - name: mto_usage
+        label: "Correct Usage"                        
+        question: "Is the idiom used correctly in Chinese text?"     
+        options: binary
+      - name: mto_identification
+        label: "Identified"                        
+        question: "Is the boundary of idiom clearly identified in the translation?"     
+        options: binary
+      - name: mto_explanation
+        question: "What are the present error categories?"
+        options: textarea
+      - name: mto_severity
+        question: "Rate the severity."
+        options: likert-3
+      - name: mto_confidence
+        question: "What's your confidence on your choice?"
+        options: likert-3
